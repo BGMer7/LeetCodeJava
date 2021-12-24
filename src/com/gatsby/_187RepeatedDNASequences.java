@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class _187RepeatedDNASequences {
     private int n = 0;
-    int N = (int) 1e5 + 10, P = 131313;
+    int N = (int) 1e5 + 10, P = 131;
     int[] h = new int[N], p = new int[N];
 
     public List<String> findRepeatedDnaSequences(@NotNull String s) {
@@ -34,7 +34,7 @@ public class _187RepeatedDNASequences {
         return res;
     }
 
-    public List<String> findRepeatedDnaSequencesWithHash(@NotNull @org.jetbrains.annotations.NotNull String s) {
+    public List<String> findRepeatedDnaSequencesWithHash(@NotNull String s) {
         // from 宫水三叶
         int n = s.length();
         List<String> ans = new ArrayList<>();
@@ -43,6 +43,8 @@ public class _187RepeatedDNASequences {
             h[i] = h[i - 1] * P + s.charAt(i - 1);
             p[i] = p[i - 1] * P;
         }
+        for (int i: p)
+            System.out.println(i);
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 1; i + 10 - 1 <= n; i++) {
             int j = i + 10 - 1;
@@ -54,8 +56,17 @@ public class _187RepeatedDNASequences {
         return ans;
     }
 
+    public int getN() {
+        return this.N;
+    }
+
+    public int getP() {
+        return this.P;
+    }
+
     public static void main(String[] args) {
         _187RepeatedDNASequences solution = new _187RepeatedDNASequences();
         System.out.println(solution.findRepeatedDnaSequencesWithHash("AAAAAAAAAAAA"));
+        System.out.println(solution.getN());
     }
 }
