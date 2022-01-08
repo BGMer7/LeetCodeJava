@@ -1,4 +1,4 @@
-package com.gatsby.competition.week274;
+package com.gatsby.contest.week274;
 
 import java.util.Arrays;
 import java.util.Collections;
