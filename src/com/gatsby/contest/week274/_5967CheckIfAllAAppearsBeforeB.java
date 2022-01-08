@@ -1,4 +1,4 @@
-package com.gatsby.competition.week274;
+package com.gatsby.contest.week274;
 
 /**
  * @author -- gatsby
