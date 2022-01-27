@@ -1,7 +1,5 @@
 package com.gatsby;
 
-import com.sun.istack.internal.NotNull;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +18,7 @@ public class _187RepeatedDNASequences {
     int N = (int) 1e5 + 10, P = 131;
     int[] h = new int[N], p = new int[N];
 
-    public List<String> findRepeatedDnaSequences(@NotNull String s) {
+    public List<String> findRepeatedDnaSequences(String s) {
         this.n = s.length();
         // 常规的做法就是维护一个hash表，列表中存放这所有的长度为10的字符串字串，一旦重复，即为答案
         List<String> res = new ArrayList<>();
@@ -34,7 +32,7 @@ public class _187RepeatedDNASequences {
         return res;
     }
 
-    public List<String> findRepeatedDnaSequencesWithHash(@NotNull String s) {
+    public List<String> findRepeatedDnaSequencesWithHash(String s) {
         // from 宫水三叶
         int n = s.length();
         List<String> ans = new ArrayList<>();
@@ -43,7 +41,7 @@ public class _187RepeatedDNASequences {
             h[i] = h[i - 1] * P + s.charAt(i - 1);
             p[i] = p[i - 1] * P;
         }
-        for (int i: p)
+        for (int i : p)
             System.out.println(i);
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 1; i + 10 - 1 <= n; i++) {
