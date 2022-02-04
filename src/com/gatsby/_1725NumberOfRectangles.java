@@ -30,8 +30,8 @@ public class _1725NumberOfRectangles {
         int n = rectangles.length;
         int maxLen = Integer.MIN_VALUE;
         int res = 1;
-        for (int i = 0; i < n; ++i) {
-            int len = Math.min(rectangles[i][0], rectangles[i][1]);
+        for (int[] rectangle : rectangles) {
+            int len = Math.min(rectangle[0], rectangle[1]);
             if (maxLen < len) {
                 maxLen = len;
                 res = 1;
