@@ -25,6 +25,15 @@ public class _258AddDigits {
         }
         return num;
     }
+
+    public int addDigitsMath(int num) {
+        return (num - 1) % 9 + 1;
+    }
+
+    public static void main(String[] args) {
+        _258AddDigits solution = new _258AddDigits();
+        System.out.println(solution.addDigitsMath(34204234));
+    }
 }
 
 
