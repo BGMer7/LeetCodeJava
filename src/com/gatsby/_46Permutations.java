@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 public class _46Permutations {
     private void helper(List<Integer> list, List<List<Integer>> res, int index, int n) {
         if (index == n) {
-            res.add(list);
+            res.add(new ArrayList(list));
         }
-        for (int i = 0; i < n; ++i) {
+        for (int i = index; i < n; ++i) {
             Collections.swap(list, index, i);
             helper(list, res, index + 1, n);
             Collections.swap(list, index, i);
