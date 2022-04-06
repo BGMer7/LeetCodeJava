@@ -8,6 +8,14 @@ package com.gatsby;
  */
 
 public class _34FindFirstAndLastPositionInSortedArray {
+    /**
+     * @MethodName:  searchRange
+     * @Parameter: [nums, target]
+     * @Return int[]
+     * @Description: 找到任意一个target之后，向前和向后寻找，直到不一样
+     * @author: Gatsby
+     * @date:  2022/4/6 20:31
+     */
     public int[] searchRange(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
